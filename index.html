@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Yann Fidelis Vasconcelos — Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#07060f;
+  --bg-soft:#0d0c1e;
+  --surface:#14132a;
+  --surface-hover:#1c1a3a;
+  --border:#28264a;
+  --text:#f3f2fa;
+  --text-dim:#9b98b8;
+  --pink:#ff2f87;
+  --violet:#8b6bf2;
+  --cyan:#2fd7e8;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg);}
+*,*::before,*::after{box-sizing:inherit;}
+body{
+  margin:0;
+  min-height:100vh;
+  min-height:100dvh;
+  background:var(--bg);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(139,107,242,0.16), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(47,215,232,0.12), transparent 40%);
+  color:var(--text);
+  font-family:'Manrope',system-ui,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+img{max-width:100%;display:block;}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:2px;}
+
+#app{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,56px) 96px;}
+
+/* ---------- Home ---------- */
+.hero{
+  min-height:min(88vh,760px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:18px;
+  padding-top:env(safe-area-inset-top,0px);
+}
+.hero-name{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  font-size:clamp(2.6rem,7vw,5rem);
+  line-height:1.04;
+  margin:0;
+  letter-spacing:-0.01em;
+  background:linear-gradient(100deg,var(--pink) 0%,var(--violet) 55%,var(--cyan) 100%);
+  background-size:180% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:drift 14s ease-in-out infinite;
+}
+@keyframes drift{
+  0%,100%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+}
+.hero-role{
+  font-size:clamp(1.05rem,2.2vw,1.3rem);
+  color:var(--text-dim);
+  max-width:34ch;
+  margin:0;
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-name{animation:none;}
+  .icon-game span,.icon-web .line,.icon-graphic .shape{animation:none;}
+  .ring-fill{transition:none;}
+}
+
+.cats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+  padding:64px 0 40px;
+  border-top:1px solid var(--border);
+}
+.cat-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-left:4px solid var(--accent,var(--pink));
+  border-radius:6px;
+  padding:26px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height:180px;
+  transition:transform .18s ease,background .18s ease,border-color .18s ease;
+}
+.cat-card:hover,.cat-card:focus-visible{
+  transform:translateY(-3px);
+  background:var(--surface-hover);
+}
+.card-icon{width:52px;height:36px;position:relative;margin-bottom:4px;}
+.icon-game{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:44px;height:30px;}
+.icon-game span{background:var(--pink);border-radius:2px;animation:blink 1.7s ease-in-out infinite;}
+.icon-game span:nth-child(1){animation-delay:0s;}
+.icon-game span:nth-child(2){animation-delay:.15s;}
+.icon-game span:nth-child(3){animation-delay:.3s;}
+.icon-game span:nth-child(4){animation-delay:.45s;}
+.icon-game span:nth-child(5){animation-delay:.6s;}
+.icon-game span:nth-child(6){animation-delay:.75s;}
+@keyframes blink{0%,100%{opacity:.2;}50%{opacity:1;}}
+.icon-web{width:60px;}
+.icon-web .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);display:inline-block;margin-right:3px;opacity:.7;}
+.icon-web .line{display:block;height:4px;border-radius:2px;background:var(--cyan);margin-top:6px;transform-origin:left;animation:grow 2.6s ease-in-out infinite;}
+.icon-web .l1{width:70%;animation-delay:0s;}
+.icon-web .l2{width:45%;animation-delay:.35s;}
+.icon-web .l3{width:60%;animation-delay:.7s;}
+@keyframes grow{0%,100%{opacity:.35;transform:scaleX(.55);}50%{opacity:1;transform:scaleX(1);}}
+.icon-graphic{position:relative;width:48px;height:40px;}
+.icon-graphic .shape{position:absolute;animation:orbit 5s ease-in-out infinite;}
+.icon-graphic .circle{width:16px;height:16px;border-radius:50%;background:var(--violet);top:2px;left:0;}
+.icon-graphic .square{width:14px;height:14px;background:var(--cyan);top:16px;left:22px;animation-delay:-1.7s;}
+.icon-graphic .triangle{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid var(--pink);top:20px;left:2px;animation-delay:-3.3s;}
+@keyframes orbit{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-5px) rotate(6deg);}}
+.cat-card h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.4rem;
+  margin:0;
+  color:var(--accent,var(--pink));
+}
+.cat-card p{margin:0;color:var(--text-dim);font-size:.96rem;flex-grow:1;}
+.cat-card .cat-count{font-size:.85rem;color:var(--text-dim);}
+.cat-pink{--accent:var(--pink);}
+.cat-cyan{--accent:var(--cyan);}
+.cat-violet{--accent:var(--violet);}
+
+.skills,.education{padding:40px 0;border-top:1px solid var(--border);}
+.skills h2,.education h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(1.5rem,3.4vw,1.9rem);
+  margin:0 0 26px;
+}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:28px;
+}
+.skill-ring{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.skill-ring svg{width:100px;height:100px;transform:rotate(-90deg);}
+.ring-bg{fill:none;stroke:var(--border);stroke-width:8;}
+.ring-fill{fill:none;stroke:url(#ring-gradient);stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.1s cubic-bezier(.22,.9,.32,1);}
+.ring-value{
+  position:absolute;top:38px;left:0;right:0;
+  text-align:center;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;
+}
+.ring-label{margin:0;font-size:.85rem;color:var(--text-dim);text-align:center;}
+
+.edu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:28px;
+}
+.edu-card{text-align:center;}
+.edu-avatar{
+  width:84px;height:84px;
+  margin:0 auto 16px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.7rem;
+  background:linear-gradient(135deg,var(--pink),var(--violet),var(--cyan));
+  color:#07060f;
+}
+.edu-card h3{margin:0 0 4px;font-size:1.05rem;}
+.edu-card p{margin:0;color:var(--text-dim);font-size:.9rem;}
+.edu-avatar img{width:100%;height:100%;object-fit:contain;border-radius:50%;background:#fff;padding:6px;}
+
+.site-footer{padding-top:48px;color:var(--text-dim);font-size:.85rem;}
+
+/* ---------- Shared ---------- */
+.back-link{
+  display:inline-block;
+  margin:28px 0 8px;
+  color:var(--text-dim);
+  font-size:.92rem;
+}
+.back-link:hover,.back-link:focus-visible{color:var(--text);}
+.empty-state{color:var(--text-dim);padding:40px 0;}
+
+/* ---------- Category page ---------- */
+.cat-header{padding:20px 0 10px;border-bottom:1px solid var(--border);margin-bottom:36px;}
+.cat-header h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(2rem,5vw,2.8rem);
+  margin:0 0 8px;
+  color:var(--accent,var(--pink));
+}
+.cat-header p{margin:0 0 20px;color:var(--text-dim);max-width:50ch;}
+
+.add-work{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:4px 20px;
+  margin-bottom:36px;
+}
+.add-work summary{
+  cursor:pointer;
+  padding:14px 0;
+  font-weight:600;
+  color:var(--text);
+}
+.add-work form{display:flex;flex-direction:column;gap:14px;padding:4px 0 22px;}
+.add-work label{display:flex;flex-direction:column;gap:6px;font-size:.9rem;color:var(--text-dim);}
+.add-work input[type=text],.add-work textarea{
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:10px 12px;
+  color:var(--text);
+  font-family:inherit;
+  font-size:.95rem;
+  resize:vertical;
+}
+.add-work input[type=file]{color:var(--text-dim);font-size:.88rem;}
+.add-work button{
+  align-self:flex-start;
+  background:linear-gradient(100deg,var(--pink),var(--violet) 60%,var(--cyan));
+  color:#07060f;
+  border:none;
+  border-radius:6px;
+  padding:11px 22px;
+  font-weight:700;
+  cursor:pointer;
+}
+.add-work button:disabled{opacity:.6;cursor:default;}
+.form-msg{color:var(--pink);font-size:.85rem;margin:0;}
+
+.works-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:22px;
+}
+.work-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  overflow:hidden;
+  transition:transform .18s ease,border-color .18s ease;
+}
+.work-card:hover,.work-card:focus-visible{transform:translateY(-3px);border-color:var(--text-dim);}
+.work-thumb{aspect-ratio:4/3;background:var(--bg-soft);overflow:hidden;}
+.work-thumb img{width:100%;height:100%;object-fit:cover;}
+.work-card h3{margin:0;padding:14px 16px;font-size:1rem;font-weight:600;}
+
+/* ---------- Work detail ---------- */
+.work-detail{padding-top:20px;}
+.work-image{width:100%;border-radius:10px;margin-bottom:28px;background:var(--bg-soft);}
+.work-badge{
+  display:inline-block;
+  font-size:.8rem;
+  color:var(--accent,var(--pink));
+  border:1px solid var(--accent,var(--pink));
+  border-radius:999px;
+  padding:4px 12px;
+  margin-bottom:14px;
+}
+.work-info h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,4vw,2.3rem);margin:0 0 14px;}
+.work-info p{color:var(--text-dim);max-width:70ch;white-space:pre-line;}
+button.danger{
+  margin-top:20px;
+  background:transparent;
+  border:1px solid var(--pink);
+  color:var(--pink);
+  border-radius:6px;
+  padding:10px 18px;
+  cursor:pointer;
+  font-weight:600;
+}
+button.danger:disabled{opacity:.6;cursor:default;}
+
+/* ---------- Admin login ---------- */
+.admin-toggle{
+  position:fixed;
+  right:16px;bottom:16px;
+  z-index:20;
+  background:var(--surface);
+  border:1px solid var(--border);
+  color:var(--text-dim);
+  border-radius:999px;
+  padding:9px 16px;
+  font-size:.82rem;
+  cursor:pointer;
+}
+.admin-toggle:hover,.admin-toggle:focus-visible{color:var(--text);border-color:var(--cyan);}
+.admin-panel{
+  position:fixed;
+  right:16px;bottom:64px;
+  z-index:20;
+  width:min(300px,calc(100vw - 32px));
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:18px;
+}
+.admin-panel h3{margin:0 0 10px;font-size:.95rem;}
+.admin-panel p{margin:0 0 12px;color:var(--text-dim);font-size:.82rem;}
+.admin-panel input[type=password]{
+  width:100%;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:9px 10px;
+  color:var(--text);
+  font-size:.88rem;
+  margin-bottom:10px;
+}
+.admin-panel button{
+  background:linear-gradient(100deg,var(--pink),var(--violet) 60%,var(--cyan));
+  color:#07060f;
+  border:none;
+  border-radius:6px;
+  padding:9px 16px;
+  font-weight:700;
+  font-size:.85rem;
+  cursor:pointer;
+}
+.admin-panel .admin-msg{color:var(--pink);font-size:.8rem;margin-top:8px;}
+.admin-status{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;gap:8px;align-items:center;}
+.admin-status span{font-size:.8rem;color:var(--text-dim);}
+.admin-status button{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text-dim);
+  border-radius:999px;
+  padding:7px 14px;
+  font-size:.8rem;
+  cursor:pointer;
+}
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="admin-widget"></div>
+<script>
+/* ============================================================
+   CONFIGURAÇÃO — preencha com os dados do SEU repositório
+   ============================================================ */
+var GITHUB_OWNER = 'yannfidel';
+var GITHUB_REPO = 'portfolio';
+var GITHUB_BRANCH = 'main';
+var DATA_PATH = 'data/works.json';
+/* ============================================================ */
+
+var CATEGORIES = [
+  { slug:'game-design', title:'Game Design', tagline:'Mecânicas, personagens e mundos jogáveis.', accent:'pink' },
+  { slug:'web-design', title:'Web Design', tagline:'Sites e interfaces pensados para usar.', accent:'cyan' },
+  { slug:'design-grafico', title:'Design Gráfico', tagline:'Identidade visual e peças gráficas.', accent:'violet' }
+];
+
+var SKILLS = [
+  { name:'HTML', percent:85 },
+  { name:'CSS', percent:80 },
+  { name:'JavaScript', percent:70 },
+  { name:'Git & GitHub', percent:75 },
+  { name:'Design de Jogos', percent:65 },
+  { name:'Figma', percent:60 }
+];
+var EDUCATION = [
+  { name: 'Fiap School', detail: 'Ensino Médio', logo: null },
+  { name: 'Anhembi Morumbi', detail: 'Design de jogos, Bacharelado', logo: null }
+];
+
+var WORKS = [];
+var canEdit = false;
+var ghToken = null;
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, function(c){
+    return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+  });
+}
+
+function findCategory(slug){
+  for (var i=0;i<CATEGORIES.length;i++){ if (CATEGORIES[i].slug === slug) return CATEGORIES[i]; }
+  return null;
+}
+
+function cardIcon(cat){
+  if (cat.slug === 'game-design'){
+    return '<div class="card-icon icon-game" aria-hidden="true">' +
+      '<span></span><span></span><span></span><span></span><span></span><span></span></div>';
+  }
+  if (cat.slug === 'web-design'){
+    return '<div class="card-icon icon-web" aria-hidden="true">' +
+      '<span class="dot"></span><span class="dot"></span><span class="dot"></span>' +
+      '<i class="line l1"></i><i class="line l2"></i><i class="line l3"></i></div>';
+  }
+  return '<div class="card-icon icon-graphic" aria-hidden="true">' +
+    '<span class="shape circle"></span><span class="shape square"></span><span class="shape triangle"></span></div>';
+}
+
+/* ---------------- Views ---------------- */
+
+function viewHome(){
+  var cards = CATEGORIES.map(function(cat){
+    var count = WORKS.filter(function(w){ return w.category === cat.slug; }).length;
+    return '<a class="cat-card cat-' + cat.accent + '" href="#/categoria/' + cat.slug + '">' +
+      cardIcon(cat) +
+      '<h2>' + escapeHtml(cat.title) + '</h2>' +
+      '<p>' + escapeHtml(cat.tagline) + '</p>' +
+      '<span class="cat-count">' + count + (count === 1 ? ' trabalho' : ' trabalhos') + '</span>' +
+      '</a>';
+  }).join('');
+  return '<header class="hero">' +
+      '<h1 class="hero-name">Yann Fidelis<br>Vasconcelos</h1>' +
+      '<p class="hero-role">Game design, web design e design gráfico.</p>' +
+    '</header>' +
+    '<section class="cats" aria-label="Áreas de trabalho">' + cards + '</section>' +
+    skillsSection() +
+    educationSection() +
+    '<footer class="site-footer"><p>Yann Fidelis Vasconcelos</p></footer>';
+}
+
+function skillsSection(){
+  var r = 42;
+  var circumference = 2 * Math.PI * r;
+  var defs = '<svg width="0" height="0" style="position:absolute" aria-hidden="true">' +
+    '<defs><linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">' +
+    '<stop offset="0%" stop-color="#ff2f87"></stop>' +
+    '<stop offset="55%" stop-color="#8b6bf2"></stop>' +
+    '<stop offset="100%" stop-color="#2fd7e8"></stop>' +
+    '</linearGradient></defs></svg>';
+  var rings = SKILLS.map(function(s){
+    var offset = circumference - (s.percent / 100) * circumference;
+    return '<div class="skill-ring" data-percent="' + s.percent + '" data-offset="' + offset.toFixed(2) + '">' +
+      '<svg viewBox="0 0 92 92">' +
+        '<circle class="ring-bg" cx="46" cy="46" r="' + r + '"></circle>' +
+        '<circle class="ring-fill" cx="46" cy="46" r="' + r + '" stroke-dasharray="' + circumference.toFixed(2) + '" stroke-dashoffset="' + circumference.toFixed(2) + '"></circle>' +
+      '</svg>' +
+      '<span class="ring-value">0%</span>' +
+      '<p class="ring-label">' + escapeHtml(s.name) + '</p>' +
+    '</div>';
+  }).join('');
+  return '<section class="skills" aria-label="Habilidades">' +
+      '<h2>Habilidades</h2>' +
+      defs +
+      '<div class="skills-grid" id="skills-grid">' + rings + '</div>' +
+    '</section>';
+}
+
+function educationSection(){
+  var cards = EDUCATION.map(function(e){
+    var avatar = e.logo
+      ? '<img src="' + e.logo + '" alt="Logo ' + escapeHtml(e.name) + '">'
+      : escapeHtml(e.name.charAt(0));
+    return '<div class="edu-card">' +
+      '<div class="edu-avatar">' + avatar + '</div>' +
+      '<h3>' + escapeHtml(e.name) + '</h3>' +
+      '<p>' + escapeHtml(e.detail) + '</p>' +
+    '</div>';
+  }).join('');
+  return '<section class="education" aria-label="Formação">' +
+      '<h2>Formação</h2>' +
+      '<div class="edu-grid">' + cards + '</div>' +
+    '</section>';
+}
+
+function viewCategory(cat){
+  var works = WORKS.filter(function(w){ return w.category === cat.slug; });
+  var addSection = '';
+  if (canEdit){
+    addSection = '<details class="add-work">' +
+      '<summary>Adicionar trabalho</summary>' +
+      '<form id="add-work-form">' +
+        '<label>Título<input type="text" name="title" required maxlength="80"></label>' +
+        '<label>Descrição<textarea name="description" rows="4" maxlength="600"></textarea></label>' +
+        '<label>Imagem<input type="file" name="image" accept="image/*" required></label>' +
+        '<button type="submit">Publicar trabalho</button>' +
+        '<p class="form-msg" hidden></p>' +
+      '</form>' +
+    '</details>';
+  }
+  var grid;
+  if (works.length){
+    grid = '<div class="works-grid">' + works.map(function(w){
+      var thumb = w.image ? '<img src="' + w.image + '" alt="' + escapeHtml(w.title) + '">' : '';
+      return '<a class="work-card" href="#/trabalho/' + w.id + '">' +
+        '<div class="work-thumb">' + thumb + '</div>' +
+        '<h3>' + escapeHtml(w.title) + '</h3>' +
+      '</a>';
+    }).join('') + '</div>';
+  } else {
+    grid = '<p class="empty-state">' + (canEdit
+      ? 'Nenhum trabalho publicado ainda. Use o formulário acima para adicionar o primeiro.'
+      : 'Nenhum trabalho publicado nesta categoria ainda.') + '</p>';
+  }
+  return '<a class="back-link" href="#/">← Portfólio</a>' +
+    '<header class="cat-header cat-' + cat.accent + '">' +
+      '<h1>' + escapeHtml(cat.title) + '</h1>' +
+      '<p>' + escapeHtml(cat.tagline) + '</p>' +
+    '</header>' +
+    addSection + grid;
+}
+
+function viewWork(work){
+  var cat = findCategory(work.category);
+  var image = work.image ? '<img class="work-image" src="' + work.image + '" alt="' + escapeHtml(work.title) + '">' : '';
+  var desc = work.description ? '<p>' + escapeHtml(work.description) + '</p>' : '';
+  var del = canEdit ? '<button id="delete-work-btn" class="danger" type="button">Excluir trabalho</button><p class="form-msg" hidden></p>' : '';
+  return '<a class="back-link" href="#/categoria/' + work.category + '">← ' + (cat ? escapeHtml(cat.title) : 'Voltar') + '</a>' +
+    '<article class="work-detail">' + image +
+      '<div class="work-info">' +
+        '<span class="work-badge cat-' + (cat ? cat.accent : 'pink') + '">' + (cat ? escapeHtml(cat.title) : '') + '</span>' +
+        '<h1>' + escapeHtml(work.title) + '</h1>' +
+        desc + del +
+      '</div>' +
+    '</article>';
+}
+
+function view404(){
+  return '<a class="back-link" href="#/">← Portfólio</a><p class="empty-state">Página não encontrada.</p>';
+}
+
+/* ---------------- Skill ring animation ---------------- */
+
+function animateSkillRings(){
+  var rings = document.querySelectorAll('.skill-ring');
+  if (!rings.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function activate(ring){
+    var circle = ring.querySelector('.ring-fill');
+    var valueEl = ring.querySelector('.ring-value');
+    var target = parseFloat(ring.getAttribute('data-percent'));
+    var offset = parseFloat(ring.getAttribute('data-offset'));
+    if (reduce){
+      circle.style.strokeDashoffset = offset;
+      valueEl.textContent = target + '%';
+      return;
+    }
+    requestAnimationFrame(function(){ circle.style.strokeDashoffset = offset; });
+    var start = null, duration = 1100;
+    function step(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      valueEl.textContent = Math.round(p * target) + '%';
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){ activate(entry.target); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    rings.forEach(function(r){ obs.observe(r); });
+  } else {
+    rings.forEach(activate);
+  }
+}
+
+/* ---------------- Image resize ---------------- */
+
+function resizeImage(file, maxDim, quality){
+  maxDim = maxDim || 1600;
+  quality = quality || 0.85;
+  return new Promise(function(resolve, reject){
+    var reader = new FileReader();
+    reader.onerror = function(){ reject(new Error('read-failed')); };
+    reader.onload = function(){
+      var img = new Image();
+      img.onerror = function(){ reject(new Error('image-failed')); };
+      img.onload = function(){
+        var width = img.width, height = img.height;
+        if (width > maxDim || height > maxDim){
+          var scale = maxDim / Math.max(width, height);
+          width = Math.round(width * scale);
+          height = Math.round(height * scale);
+        }
+        var canvas = document.createElement('canvas');
+        canvas.width = width; canvas.height = height;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/* ---------------- GitHub-backed storage ---------------- */
+/* Só quem tem o token (você) consegue gravar. Qualquer visitante
+   sem token só lê o data/works.json publicado no repositório. */
+
+function apiHeaders(){
+  var h = { 'Accept': 'application/vnd.github+json' };
+  if (ghToken) h['Authorization'] = 'token ' + ghToken;
+  return h;
+}
+
+function loadWorks(){
+  return fetch('./' + DATA_PATH + '?_=' + Date.now())
+    .then(function(res){ return res.ok ? res.json() : []; })
+    .catch(function(){ return []; });
+}
+
+function verifyToken(token){
+  return fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO, {
+    headers: { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github+json' }
+  }).then(function(res){
+    if (!res.ok) throw new Error('repo-not-found-or-no-access');
+    return res.json();
+  }).then(function(repo){
+    if (!repo.permissions || !repo.permissions.push) throw new Error('no-write-access');
+    return true;
+  });
+}
+
+function saveWorks(newWorks){
+  var apiUrl = 'https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/' + DATA_PATH;
+  return fetch(apiUrl + '?ref=' + GITHUB_BRANCH, { headers: apiHeaders() })
+    .then(function(res){ return res.ok ? res.json() : { sha: null }; })
+    .then(function(current){
+      var content = btoa(unescape(encodeURIComponent(JSON.stringify(newWorks, null, 2))));
+      var body = {
+        message: 'Atualiza portfólio (' + newWorks.length + ' trabalhos)',
+        content: content,
+        branch: GITHUB_BRANCH
+      };
+      if (current.sha) body.sha = current.sha;
+      return fetch(apiUrl, {
+        method: 'PUT',
+        headers: Object.assign({ 'Content-Type': 'application/json' }, apiHeaders()),
+        body: JSON.stringify(body)
+      });
+    })
+    .then(function(res){ return res.ok; })
+    .catch(function(){ return false; });
+}
+
+/* ---------------- Admin widget ---------------- */
+
+function renderAdminWidget(){
+  var el = document.getElementById('admin-widget');
+  if (canEdit){
+    el.innerHTML = '<div class="admin-status"><span>Modo edição ativo</span>' +
+      '<button id="admin-logout" type="button">Sair</button></div>';
+    document.getElementById('admin-logout').addEventListener('click', function(){
+      sessionStorage.removeItem('gh_pat');
+      ghToken = null; canEdit = false;
+      renderAdminWidget();
+      route();
+    });
+  } else {
+    el.innerHTML = '<button class="admin-toggle" id="admin-open" type="button">Entrar como admin</button>';
+    document.getElementById('admin-open').addEventListener('click', openAdminPanel);
+  }
+}
+
+function openAdminPanel(){
+  var el = document.getElementById('admin-widget');
+  el.innerHTML = '<button class="admin-toggle" id="admin-open" type="button">Entrar como admin</button>' +
+    '<div class="admin-panel">' +
+      '<h3>Acesso do dono</h3>' +
+      '<p>Cole um token do GitHub (fine-grained, com acesso de escrita só a este repositório). Ele fica salvo apenas nesta aba, nunca é enviado a mais ninguém além do GitHub.</p>' +
+      '<input type="password" id="gh-token-input" placeholder="github_pat_...">' +
+      '<button id="gh-token-submit" type="button">Entrar</button>' +
+      '<p class="admin-msg" id="gh-token-msg" hidden></p>' +
+    '</div>';
+  document.getElementById('admin-open').addEventListener('click', function(){ renderAdminWidget(); });
+  document.getElementById('gh-token-submit').addEventListener('click', function(){
+    var input = document.getElementById('gh-token-input');
+    var msg = document.getElementById('gh-token-msg');
+    var token = input.value.trim();
+    if (!token) return;
+    verifyToken(token).then(function(){
+      ghToken = token;
+      sessionStorage.setItem('gh_pat', token);
+      canEdit = true;
+      renderAdminWidget();
+      route();
+    }).catch(function(){
+      msg.hidden = false;
+      msg.textContent = 'Token inválido ou sem permissão de escrita neste repositório.';
+    });
+  });
+}
+
+/* ---------------- Handlers ---------------- */
+
+function attachCategoryHandlers(cat){
+  var form = document.getElementById('add-work-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var msg = form.querySelector('.form-msg');
+    var btn = form.querySelector('button[type=submit]');
+    var fd = new FormData(form);
+    var title = (fd.get('title') || '').trim();
+    var description = (fd.get('description') || '').trim();
+    var file = fd.get('image');
+    if (!title || !file || !file.size) return;
+    btn.disabled = true; btn.textContent = 'Publicando...';
+    msg.hidden = true;
+    resizeImage(file).then(function(dataUrl){
+      var newWork = {
+        id: cat.slug + '-' + Date.now().toString(36) + Math.random().toString(36).slice(2,7),
+        category: cat.slug,
+        title: title,
+        description: description,
+        image: dataUrl,
+        createdAt: new Date().toISOString()
+      };
+      var updated = WORKS.concat([newWork]);
+      return saveWorks(updated).then(function(ok){
+        if (ok) WORKS = updated;
+        return ok;
+      });
+    }).then(function(ok){
+      if (!ok) throw new Error('save-failed');
+      route();
+    }).catch(function(){
+      btn.disabled = false; btn.textContent = 'Publicar trabalho';
+      msg.hidden = false; msg.textContent = 'Não foi possível salvar no GitHub agora. Tente novamente.';
+    });
+  });
+}
+
+function attachWorkHandlers(work){
+  var btn = document.getElementById('delete-work-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    if (!confirm('Excluir este trabalho? Essa ação não pode ser desfeita.')) return;
+    var msg = btn.nextElementSibling;
+    btn.disabled = true; btn.textContent = 'Excluindo...';
+    var updated = WORKS.filter(function(w){ return w.id !== work.id; });
+    saveWorks(updated).then(function(ok){
+      if (ok){
+        WORKS = updated;
+        location.hash = '#/categoria/' + work.category;
+      } else {
+        btn.disabled = false; btn.textContent = 'Excluir trabalho';
+        if (msg){ msg.hidden = false; msg.textContent = 'Não foi possível excluir no GitHub agora. Tente novamente.'; }
+      }
+    });
+  });
+}
+
+/* ---------------- Router ---------------- */
+
+function route(){
+  var hash = location.hash.replace(/^#\/?/, '');
+  var parts = hash.split('/').filter(Boolean);
+  var app = document.getElementById('app');
+  if (parts.length === 0){
+    app.innerHTML = viewHome();
+    animateSkillRings();
+  } else if (parts[0] === 'categoria' && parts[1]){
+    var cat = findCategory(parts[1]);
+    if (!cat){ app.innerHTML = view404(); }
+    else { app.innerHTML = viewCategory(cat); attachCategoryHandlers(cat); }
+  } else if (parts[0] === 'trabalho' && parts[1]){
+    var work = null;
+    for (var i=0;i<WORKS.length;i++){ if (WORKS[i].id === parts[1]) work = WORKS[i]; }
+    if (!work){ app.innerHTML = view404(); }
+    else { app.innerHTML = viewWork(work); attachWorkHandlers(work); }
+  } else {
+    app.innerHTML = view404();
+  }
+  window.scrollTo(0,0);
+}
+
+/* ---------------- Init ---------------- */
+
+window.addEventListener('hashchange', route);
+
+var storedToken = sessionStorage.getItem('gh_pat');
+renderAdminWidget();
+loadWorks().then(function(data){
+  WORKS = data || [];
+  if (storedToken){
+    ghToken = storedToken;
+    verifyToken(storedToken).then(function(){
+      canEdit = true;
+      renderAdminWidget();
+      route();
+    }).catch(function(){
+      sessionStorage.removeItem('gh_pat');
+      ghToken = null;
+      route();
+    });
+  } else {
+    route();
+  }
+});
+</script>
+</body>
+</html>
