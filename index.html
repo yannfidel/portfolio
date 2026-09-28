@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
 :root{
   --bg:#07060f;
   --bg-soft:#0d0c1e;
@@ -49,7 +48,7 @@ img{max-width:100%;display:block;}
 
 /* ---------- Home ---------- */
 .hero{
-  min-height:min(88vh,760px);
+  min-height:min(80vh,700px);
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -132,12 +131,7 @@ img{max-width:100%;display:block;}
 .icon-graphic .square{width:14px;height:14px;background:var(--cyan);top:16px;left:22px;animation-delay:-1.7s;}
 .icon-graphic .triangle{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid var(--pink);top:20px;left:2px;animation-delay:-3.3s;}
 @keyframes orbit{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-5px) rotate(6deg);}}
-.cat-card h2{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:1.4rem;
-  margin:0;
-  color:var(--accent,var(--pink));
-}
+.cat-card h2{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;margin:0;color:var(--accent,var(--pink));}
 .cat-card p{margin:0;color:var(--text-dim);font-size:.96rem;flex-grow:1;}
 .cat-card .cat-count{font-size:.85rem;color:var(--text-dim);}
 .cat-pink{--accent:var(--pink);}
@@ -145,217 +139,121 @@ img{max-width:100%;display:block;}
 .cat-violet{--accent:var(--violet);}
 
 .skills,.education{padding:40px 0;border-top:1px solid var(--border);}
-.skills h2,.education h2{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(1.5rem,3.4vw,1.9rem);
-  margin:0 0 26px;
-}
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:28px;
-}
+.skills h2,.education h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3.4vw,1.9rem);margin:0 0 26px;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:28px;}
 .skill-ring{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;}
 .skill-ring svg{width:100px;height:100px;transform:rotate(-90deg);}
 .ring-bg{fill:none;stroke:var(--border);stroke-width:8;}
 .ring-fill{fill:none;stroke:url(#ring-gradient);stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.1s cubic-bezier(.22,.9,.32,1);}
-.ring-value{
-  position:absolute;top:38px;left:0;right:0;
-  text-align:center;
-  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;
-}
+.ring-value{position:absolute;top:38px;left:0;right:0;text-align:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;}
 .ring-label{margin:0;font-size:.85rem;color:var(--text-dim);text-align:center;}
 
-.edu-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:28px;
-}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;}
 .edu-card{text-align:center;}
 .edu-avatar{
-  width:84px;height:84px;
-  margin:0 auto 16px;
-  border-radius:50%;
+  width:84px;height:84px;margin:0 auto 16px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.7rem;
   background:linear-gradient(135deg,var(--pink),var(--violet),var(--cyan));
-  color:#07060f;
+  color:#07060f;overflow:hidden;
 }
+.edu-avatar img{width:100%;height:100%;object-fit:contain;border-radius:50%;background:#fff;padding:6px;}
 .edu-card h3{margin:0 0 4px;font-size:1.05rem;}
 .edu-card p{margin:0;color:var(--text-dim);font-size:.9rem;}
-.edu-avatar img{width:100%;height:100%;object-fit:contain;border-radius:50%;background:#fff;padding:6px;}
 
 .site-footer{padding-top:48px;color:var(--text-dim);font-size:.85rem;}
 
 /* ---------- Shared ---------- */
-.back-link{
-  display:inline-block;
-  margin:28px 0 8px;
-  color:var(--text-dim);
-  font-size:.92rem;
-}
+.back-link{display:inline-block;margin:28px 0 8px;color:var(--text-dim);font-size:.92rem;}
 .back-link:hover,.back-link:focus-visible{color:var(--text);}
 .empty-state{color:var(--text-dim);padding:40px 0;}
 
 /* ---------- Category page ---------- */
 .cat-header{padding:20px 0 10px;border-bottom:1px solid var(--border);margin-bottom:36px;}
-.cat-header h1{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(2rem,5vw,2.8rem);
-  margin:0 0 8px;
-  color:var(--accent,var(--pink));
-}
+.cat-header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,2.8rem);margin:0 0 8px;color:var(--accent,var(--pink));}
 .cat-header p{margin:0 0 20px;color:var(--text-dim);max-width:50ch;}
 
-.add-work{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:4px 20px;
-  margin-bottom:36px;
-}
-.add-work summary{
-  cursor:pointer;
-  padding:14px 0;
-  font-weight:600;
-  color:var(--text);
-}
+.add-work{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:4px 20px;margin-bottom:36px;}
+.add-work summary{cursor:pointer;padding:14px 0;font-weight:600;color:var(--text);}
 .add-work form{display:flex;flex-direction:column;gap:14px;padding:4px 0 22px;}
 .add-work label{display:flex;flex-direction:column;gap:6px;font-size:.9rem;color:var(--text-dim);}
-.add-work input[type=text],.add-work textarea{
-  background:var(--bg-soft);
-  border:1px solid var(--border);
-  border-radius:6px;
-  padding:10px 12px;
-  color:var(--text);
-  font-family:inherit;
-  font-size:.95rem;
-  resize:vertical;
+.add-work input[type=text],.add-work input[type=url],.add-work textarea{
+  background:var(--bg-soft);border:1px solid var(--border);border-radius:6px;
+  padding:10px 12px;color:var(--text);font-family:inherit;font-size:.95rem;resize:vertical;
 }
 .add-work input[type=file]{color:var(--text-dim);font-size:.88rem;}
-.add-work button{
+.add-work fieldset{border:1px solid var(--border);border-radius:8px;padding:14px;margin:0;}
+.add-work legend{padding:0 6px;font-size:.85rem;color:var(--text-dim);}
+.add-work button[type=submit]{
   align-self:flex-start;
   background:linear-gradient(100deg,var(--pink),var(--violet) 60%,var(--cyan));
-  color:#07060f;
-  border:none;
-  border-radius:6px;
-  padding:11px 22px;
-  font-weight:700;
-  cursor:pointer;
+  color:#07060f;border:none;border-radius:6px;padding:11px 22px;font-weight:700;cursor:pointer;
 }
-.add-work button:disabled{opacity:.6;cursor:default;}
+.add-work button[type=submit]:disabled{opacity:.6;cursor:default;}
 .form-msg{color:var(--pink);font-size:.85rem;margin:0;}
+.field-hint{font-size:.78rem;color:var(--text-dim);opacity:.8;margin-top:-4px;}
 
-.works-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:22px;
-}
-.work-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  overflow:hidden;
-  transition:transform .18s ease,border-color .18s ease;
-}
+.media-field{border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:10px;background:var(--bg-soft);}
+.media-field-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;}
+.media-field select{background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:7px 10px;font-size:.85rem;}
+.remove-media-btn{background:transparent;border:1px solid var(--border);color:var(--text-dim);border-radius:50%;width:26px;height:26px;cursor:pointer;line-height:1;flex:0 0 auto;}
+.remove-media-btn:hover{color:var(--pink);border-color:var(--pink);}
+.add-media-btn{background:transparent;border:1px dashed var(--border);color:var(--text-dim);border-radius:6px;padding:9px 16px;font-size:.85rem;cursor:pointer;align-self:flex-start;}
+.add-media-btn:hover{color:var(--cyan);border-color:var(--cyan);}
+
+.works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px;}
+.work-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:transform .18s ease,border-color .18s ease;}
 .work-card:hover,.work-card:focus-visible{transform:translateY(-3px);border-color:var(--text-dim);}
-.work-thumb{aspect-ratio:4/3;background:var(--bg-soft);overflow:hidden;}
+.work-thumb{aspect-ratio:4/3;background:var(--bg-soft);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:1.4rem;}
 .work-thumb img{width:100%;height:100%;object-fit:cover;}
 .work-card h3{margin:0;padding:14px 16px;font-size:1rem;font-weight:600;}
 
 /* ---------- Work detail ---------- */
 .work-detail{padding-top:20px;}
-.work-image{width:100%;border-radius:10px;margin-bottom:28px;background:var(--bg-soft);}
-.work-badge{
-  display:inline-block;
-  font-size:.8rem;
-  color:var(--accent,var(--pink));
-  border:1px solid var(--accent,var(--pink));
-  border-radius:999px;
-  padding:4px 12px;
-  margin-bottom:14px;
-}
+.media-gallery{margin-bottom:10px;}
+.media-stage{border-radius:10px;overflow:hidden;background:var(--bg-soft);}
+.media-stage img{width:100%;display:block;}
+.media-stage .video-embed{position:relative;padding-top:56.25%;height:0;}
+.media-stage .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.media-stage video.video-embed-native{width:100%;display:block;background:#000;max-height:70vh;}
+.media-stage .video-fallback-link{display:block;padding:50px 20px;text-align:center;color:var(--cyan);}
+.media-thumbs{display:flex;gap:10px;margin-top:12px;overflow-x:auto;padding-bottom:4px;}
+.media-thumb{flex:0 0 auto;width:72px;height:54px;border-radius:6px;overflow:hidden;border:2px solid transparent;cursor:pointer;background:var(--bg-soft);padding:0;color:var(--text-dim);font-size:1.1rem;display:flex;align-items:center;justify-content:center;}
+.media-thumb.active{border-color:var(--cyan);}
+.media-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.work-badge{display:inline-block;font-size:.8rem;color:var(--accent,var(--pink));border:1px solid var(--accent,var(--pink));border-radius:999px;padding:4px 12px;margin:24px 0 14px;}
 .work-info h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,4vw,2.3rem);margin:0 0 14px;}
 .work-info p{color:var(--text-dim);max-width:70ch;white-space:pre-line;}
-button.danger{
-  margin-top:20px;
-  background:transparent;
-  border:1px solid var(--pink);
-  color:var(--pink);
-  border-radius:6px;
-  padding:10px 18px;
-  cursor:pointer;
-  font-weight:600;
-}
+.project-link{display:inline-block;margin:18px 0 6px;padding:11px 20px;border-radius:999px;background:linear-gradient(100deg,var(--pink),var(--violet) 60%,var(--cyan));color:#07060f;font-weight:700;font-size:.9rem;}
+.work-meta{margin:26px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;padding-top:22px;border-top:1px solid var(--border);}
+.work-meta dt{font-size:.78rem;color:var(--text-dim);margin:0 0 3px;}
+.work-meta dd{margin:0;font-size:.92rem;}
+button.danger{margin-top:22px;background:transparent;border:1px solid var(--pink);color:var(--pink);border-radius:6px;padding:10px 18px;cursor:pointer;font-weight:600;}
 button.danger:disabled{opacity:.6;cursor:default;}
 
-/* ---------- Admin login ---------- */
-.admin-toggle{
-  position:fixed;
-  right:16px;bottom:16px;
-  z-index:20;
-  background:var(--surface);
-  border:1px solid var(--border);
-  color:var(--text-dim);
-  border-radius:999px;
-  padding:9px 16px;
-  font-size:.82rem;
-  cursor:pointer;
-}
+/* ---------- Admin + language widgets ---------- */
+.admin-toggle{position:fixed;right:16px;bottom:16px;z-index:20;background:var(--surface);border:1px solid var(--border);color:var(--text-dim);border-radius:999px;padding:9px 16px;font-size:.82rem;cursor:pointer;}
 .admin-toggle:hover,.admin-toggle:focus-visible{color:var(--text);border-color:var(--cyan);}
-.admin-panel{
-  position:fixed;
-  right:16px;bottom:64px;
-  z-index:20;
-  width:min(300px,calc(100vw - 32px));
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:18px;
-}
+.admin-panel{position:fixed;right:16px;bottom:64px;z-index:20;width:min(300px,calc(100vw - 32px));background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;}
 .admin-panel h3{margin:0 0 10px;font-size:.95rem;}
 .admin-panel p{margin:0 0 12px;color:var(--text-dim);font-size:.82rem;}
-.admin-panel input[type=password]{
-  width:100%;
-  background:var(--bg-soft);
-  border:1px solid var(--border);
-  border-radius:6px;
-  padding:9px 10px;
-  color:var(--text);
-  font-size:.88rem;
-  margin-bottom:10px;
-}
-.admin-panel button{
-  background:linear-gradient(100deg,var(--pink),var(--violet) 60%,var(--cyan));
-  color:#07060f;
-  border:none;
-  border-radius:6px;
-  padding:9px 16px;
-  font-weight:700;
-  font-size:.85rem;
-  cursor:pointer;
-}
+.admin-panel input[type=password]{width:100%;background:var(--bg-soft);border:1px solid var(--border);border-radius:6px;padding:9px 10px;color:var(--text);font-size:.88rem;margin-bottom:10px;}
+.admin-panel button{background:linear-gradient(100deg,var(--pink),var(--violet) 60%,var(--cyan));color:#07060f;border:none;border-radius:6px;padding:9px 16px;font-weight:700;font-size:.85rem;cursor:pointer;}
 .admin-panel .admin-msg{color:var(--pink);font-size:.8rem;margin-top:8px;}
 .admin-status{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;gap:8px;align-items:center;}
 .admin-status span{font-size:.8rem;color:var(--text-dim);}
-.admin-status button{
-  background:transparent;
-  border:1px solid var(--border);
-  color:var(--text-dim);
-  border-radius:999px;
-  padding:7px 14px;
-  font-size:.8rem;
-  cursor:pointer;
-}
-
+.admin-status button{background:transparent;border:1px solid var(--border);color:var(--text-dim);border-radius:999px;padding:7px 14px;font-size:.8rem;cursor:pointer;}
+.lang-toggle{position:fixed;top:16px;right:16px;z-index:20;background:var(--surface);border:1px solid var(--border);color:var(--text-dim);border-radius:999px;padding:9px 16px;font-size:.82rem;cursor:pointer;}
+.lang-toggle:hover,.lang-toggle:focus-visible{color:var(--text);border-color:var(--cyan);}
 </style>
 </head>
 <body>
 <div id="app"></div>
 <div id="admin-widget"></div>
+<div id="lang-widget"></div>
 <script>
 /* ============================================================
-   CONFIGURAÇÃO — preencha com os dados do SEU repositório
+   CONFIGURAÇÃO
    ============================================================ */
 var GITHUB_OWNER = 'yannfidel';
 var GITHUB_REPO = 'portfolio';
@@ -364,9 +262,15 @@ var DATA_PATH = 'data/works.json';
 /* ============================================================ */
 
 var CATEGORIES = [
-  { slug:'game-design', title:'Game Design', tagline:'Mecânicas, personagens e mundos jogáveis.', accent:'pink' },
-  { slug:'web-design', title:'Web Design', tagline:'Sites e interfaces pensados para usar.', accent:'cyan' },
-  { slug:'design-grafico', title:'Design Gráfico', tagline:'Identidade visual e peças gráficas.', accent:'violet' }
+  { slug:'game-design', title:'Game Design', titleEn:'Game Design',
+    tagline:'Mecânicas, personagens e mundos jogáveis.', taglineEn:'Mechanics, characters and playable worlds.',
+    accent:'pink', hasProjectLink:true },
+  { slug:'web-design', title:'Web Design', titleEn:'Web Design',
+    tagline:'Sites e interfaces pensados para usar.', taglineEn:'Sites and interfaces designed to be used.',
+    accent:'cyan', hasProjectLink:true },
+  { slug:'design-grafico', title:'Design Gráfico', titleEn:'Graphic Design',
+    tagline:'Identidade visual e peças gráficas.', taglineEn:'Visual identity and graphic pieces.',
+    accent:'violet', hasProjectLink:false }
 ];
 
 var SKILLS = [
@@ -374,13 +278,55 @@ var SKILLS = [
   { name:'CSS', percent:80 },
   { name:'JavaScript', percent:40 },
   { name:'Git & GitHub', percent:50 },
-  { name:'Pacote Adobe', percent:60 },
+  { name:'Pacote Adobe', nameEn:'Adobe Suite', percent:60 },
   { name:'Figma', percent:60 }
 ];
 var EDUCATION = [
-  { name: 'Fiap School', detail: 'Ensino Médio', logo: 'FIAP.png' },
-  { name: 'Anhembi Morumbi', detail: 'Design de jogos, Bacharelado', logo: 'images.png'}
+  { name: 'Fiap School', detail: 'Ensino Médio', detailEn: 'High School', logo: null },
+  { name: 'Anhembi Morumbi', detail: 'Design de jogos, Bacharelado', detailEn: "Game Design, Bachelor's Degree", logo: null }
 ];
+
+var I18N = {
+  pt: {
+    heroRoleFallback: 'Game design, web design e design gráfico.',
+    skillsTitle: 'Habilidades',
+    eduTitle: 'Formação',
+    backPortfolio: '← Portfólio',
+    emptyOwner: 'Nenhum trabalho publicado ainda. Use o formulário acima para adicionar o primeiro.',
+    emptyVisitor: 'Nenhum trabalho publicado nesta categoria ainda.',
+    notFound: 'Página não encontrada.',
+    viewProject: 'Ver projeto ao vivo ↗',
+    langToggle: 'View in English',
+    metaTools: 'Ferramentas utilizadas',
+    metaRole: 'Papel no projeto',
+    metaDuration: 'Duração',
+    metaYear: 'Ano',
+    metaChallenges: 'Desafios e soluções',
+    workCountOne: ' trabalho',
+    workCountMany: ' trabalhos'
+  },
+  en: {
+    heroRoleFallback: 'Game design, web design and graphic design.',
+    skillsTitle: 'Skills',
+    eduTitle: 'Education',
+    backPortfolio: '← Portfolio',
+    emptyOwner: 'No projects published yet. Use the form above to add the first one.',
+    emptyVisitor: 'No projects published in this category yet.',
+    notFound: 'Page not found.',
+    viewProject: 'View live project ↗',
+    langToggle: 'Ver em Português',
+    metaTools: 'Tools used',
+    metaRole: 'Role in the project',
+    metaDuration: 'Duration',
+    metaYear: 'Year',
+    metaChallenges: 'Challenges & solutions',
+    workCountOne: ' project',
+    workCountMany: ' projects'
+  }
+};
+
+var currentLang = localStorage.getItem('site_lang') === 'en' ? 'en' : 'pt';
+function t(key){ return I18N[currentLang][key]; }
 
 var WORKS = [];
 var canEdit = false;
@@ -395,6 +341,18 @@ function escapeHtml(str){
 function findCategory(slug){
   for (var i=0;i<CATEGORIES.length;i++){ if (CATEGORIES[i].slug === slug) return CATEGORIES[i]; }
   return null;
+}
+function catTitle(cat){ return currentLang === 'en' ? cat.titleEn : cat.title; }
+function catTagline(cat){ return currentLang === 'en' ? cat.taglineEn : cat.tagline; }
+function skillName(s){ return (currentLang === 'en' && s.nameEn) ? s.nameEn : s.name; }
+function eduDetail(e){ return (currentLang === 'en' && e.detailEn) ? e.detailEn : e.detail; }
+function workTitle(w){ return (currentLang === 'en' && w.titleEn) ? w.titleEn : w.title; }
+function workDescription(w){ return (currentLang === 'en' && w.descriptionEn) ? w.descriptionEn : w.description; }
+
+function workMedia(w){
+  if (w.media && w.media.length) return w.media;
+  if (w.image) return [{ type:'image', src:w.image }];
+  return [];
 }
 
 function cardIcon(cat){
@@ -418,14 +376,14 @@ function viewHome(){
     var count = WORKS.filter(function(w){ return w.category === cat.slug; }).length;
     return '<a class="cat-card cat-' + cat.accent + '" href="#/categoria/' + cat.slug + '">' +
       cardIcon(cat) +
-      '<h2>' + escapeHtml(cat.title) + '</h2>' +
-      '<p>' + escapeHtml(cat.tagline) + '</p>' +
-      '<span class="cat-count">' + count + (count === 1 ? ' trabalho' : ' trabalhos') + '</span>' +
+      '<h2>' + escapeHtml(catTitle(cat)) + '</h2>' +
+      '<p>' + escapeHtml(catTagline(cat)) + '</p>' +
+      '<span class="cat-count">' + count + (count === 1 ? t('workCountOne') : t('workCountMany')) + '</span>' +
       '</a>';
   }).join('');
   return '<header class="hero">' +
       '<h1 class="hero-name">Yann Fidelis<br>Vasconcelos</h1>' +
-      '<p class="hero-role">Game design, web design e design gráfico.</p>' +
+      '<p class="hero-role">' + escapeHtml(t('heroRoleFallback')) + '</p>' +
     '</header>' +
     '<section class="cats" aria-label="Áreas de trabalho">' + cards + '</section>' +
     skillsSection() +
@@ -450,11 +408,11 @@ function skillsSection(){
         '<circle class="ring-fill" cx="46" cy="46" r="' + r + '" stroke-dasharray="' + circumference.toFixed(2) + '" stroke-dashoffset="' + circumference.toFixed(2) + '"></circle>' +
       '</svg>' +
       '<span class="ring-value">0%</span>' +
-      '<p class="ring-label">' + escapeHtml(s.name) + '</p>' +
+      '<p class="ring-label">' + escapeHtml(skillName(s)) + '</p>' +
     '</div>';
   }).join('');
   return '<section class="skills" aria-label="Habilidades">' +
-      '<h2>Habilidades</h2>' +
+      '<h2>' + t('skillsTitle') + '</h2>' +
       defs +
       '<div class="skills-grid" id="skills-grid">' + rings + '</div>' +
     '</section>';
@@ -468,69 +426,149 @@ function educationSection(){
     return '<div class="edu-card">' +
       '<div class="edu-avatar">' + avatar + '</div>' +
       '<h3>' + escapeHtml(e.name) + '</h3>' +
-      '<p>' + escapeHtml(e.detail) + '</p>' +
+      '<p>' + escapeHtml(eduDetail(e)) + '</p>' +
     '</div>';
   }).join('');
   return '<section class="education" aria-label="Formação">' +
-      '<h2>Formação</h2>' +
+      '<h2>' + t('eduTitle') + '</h2>' +
       '<div class="edu-grid">' + cards + '</div>' +
     '</section>';
 }
 
 function viewCategory(cat){
   var works = WORKS.filter(function(w){ return w.category === cat.slug; });
-  var addSection = '';
-  if (canEdit){
-    addSection = '<details class="add-work">' +
-      '<summary>Adicionar trabalho</summary>' +
-      '<form id="add-work-form">' +
-        '<label>Título<input type="text" name="title" required maxlength="80"></label>' +
-        '<label>Descrição<textarea name="description" rows="4" maxlength="600"></textarea></label>' +
-        '<label>Imagem<input type="file" name="image" accept="image/*" required></label>' +
-        '<button type="submit">Publicar trabalho</button>' +
-        '<p class="form-msg" hidden></p>' +
-      '</form>' +
-    '</details>';
-  }
+  var addSection = canEdit ? addWorkFormHtml(cat) : '';
   var grid;
   if (works.length){
     grid = '<div class="works-grid">' + works.map(function(w){
-      var thumb = w.image ? '<img src="' + w.image + '" alt="' + escapeHtml(w.title) + '">' : '';
+      var media = workMedia(w);
+      var thumb = (media[0] && media[0].type === 'image')
+        ? '<img src="' + media[0].src + '" alt="' + escapeHtml(workTitle(w)) + '">'
+        : (media[0] ? '▶' : '');
       return '<a class="work-card" href="#/trabalho/' + w.id + '">' +
         '<div class="work-thumb">' + thumb + '</div>' +
-        '<h3>' + escapeHtml(w.title) + '</h3>' +
+        '<h3>' + escapeHtml(workTitle(w)) + '</h3>' +
       '</a>';
     }).join('') + '</div>';
   } else {
-    grid = '<p class="empty-state">' + (canEdit
-      ? 'Nenhum trabalho publicado ainda. Use o formulário acima para adicionar o primeiro.'
-      : 'Nenhum trabalho publicado nesta categoria ainda.') + '</p>';
+    grid = '<p class="empty-state">' + (canEdit ? t('emptyOwner') : t('emptyVisitor')) + '</p>';
   }
-  return '<a class="back-link" href="#/">← Portfólio</a>' +
+  return '<a class="back-link" href="#/">' + t('backPortfolio') + '</a>' +
     '<header class="cat-header cat-' + cat.accent + '">' +
-      '<h1>' + escapeHtml(cat.title) + '</h1>' +
-      '<p>' + escapeHtml(cat.tagline) + '</p>' +
+      '<h1>' + escapeHtml(catTitle(cat)) + '</h1>' +
+      '<p>' + escapeHtml(catTagline(cat)) + '</p>' +
     '</header>' +
     addSection + grid;
 }
 
+function addWorkFormHtml(cat){
+  return '<details class="add-work">' +
+    '<summary>Adicionar trabalho</summary>' +
+    '<form id="add-work-form">' +
+      '<label>Título<input type="text" name="title" required maxlength="120"></label>' +
+      '<label>Título em inglês (opcional)<input type="text" name="titleEn" maxlength="120"></label>' +
+      '<label>Descrição<textarea name="description" rows="5"></textarea></label>' +
+      '<label>Descrição em inglês (opcional)<textarea name="descriptionEn" rows="5"></textarea></label>' +
+      '<label>Ferramentas utilizadas<input type="text" name="tools" placeholder="Ex: Figma, Photoshop, Unity"></label>' +
+      '<label>Seu papel no projeto<input type="text" name="role" placeholder="Ex: Designer único, líder de projeto..."></label>' +
+      '<label>Duração do projeto<input type="text" name="duration" placeholder="Ex: 3 semanas"></label>' +
+      '<label>Ano<input type="text" name="year" placeholder="Ex: 2026" maxlength="20"></label>' +
+      '<label>Desafios e soluções<textarea name="challenges" rows="4" placeholder="O que foi difícil e como você resolveu"></textarea></label>' +
+      (cat.hasProjectLink ? '<label>Link do projeto (opcional)<input type="url" name="projectUrl" placeholder="https://..."></label>' : '') +
+      '<fieldset>' +
+        '<legend>Mídia (imagens e vídeos)</legend>' +
+        '<div id="media-fields"></div>' +
+        '<button type="button" class="add-media-btn" id="add-media-row">+ Adicionar mídia</button>' +
+        '<p class="field-hint">Vídeos: cole um link do YouTube, Vimeo ou um .mp4 direto. Pelo menos uma mídia é obrigatória.</p>' +
+      '</fieldset>' +
+      '<button type="submit">Publicar trabalho</button>' +
+      '<p class="form-msg" hidden></p>' +
+    '</form>' +
+  '</details>';
+}
+
+function mediaFieldHtml(){
+  return '<div class="media-field">' +
+    '<div class="media-field-row">' +
+      '<select class="media-type-select">' +
+        '<option value="image">Imagem</option>' +
+        '<option value="video">Vídeo (link)</option>' +
+      '</select>' +
+      '<button type="button" class="remove-media-btn" aria-label="Remover mídia">✕</button>' +
+    '</div>' +
+    '<input type="file" class="media-file-input" accept="image/*">' +
+    '<input type="url" class="media-url-input" placeholder="https://youtube.com/watch?v=..." style="display:none">' +
+  '</div>';
+}
+
+function videoEmbedHtml(url){
+  var safe = escapeHtml(url);
+  var yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
+  if (yt){
+    return '<div class="video-embed"><iframe src="https://www.youtube.com/embed/' + yt[1] + '" allowfullscreen loading="lazy"></iframe></div>';
+  }
+  var vm = url.match(/vimeo\.com\/(\d+)/);
+  if (vm){
+    return '<div class="video-embed"><iframe src="https://player.vimeo.com/video/' + vm[1] + '" allowfullscreen loading="lazy"></iframe></div>';
+  }
+  if (/\.(mp4|webm|ogg)(\?.*)?$/i.test(url)){
+    return '<video class="video-embed-native" controls src="' + safe + '"></video>';
+  }
+  return '<a class="video-fallback-link" href="' + safe + '" target="_blank" rel="noopener">Assistir vídeo ↗</a>';
+}
+
+function mediaStageHtml(m){
+  if (m.type === 'image') return '<img src="' + m.src + '" alt="">';
+  return videoEmbedHtml(m.url);
+}
+
+function galleryHtml(media){
+  if (!media.length) return '';
+  var thumbs = media.map(function(m, i){
+    if (m.type === 'image'){
+      return '<button type="button" class="media-thumb' + (i === 0 ? ' active' : '') + '" data-index="' + i + '"><img src="' + m.src + '" alt=""></button>';
+    }
+    return '<button type="button" class="media-thumb is-video' + (i === 0 ? ' active' : '') + '" data-index="' + i + '">▶</button>';
+  }).join('');
+  return '<div class="media-gallery" id="media-gallery">' +
+    '<div class="media-stage" id="media-stage">' + mediaStageHtml(media[0]) + '</div>' +
+    (media.length > 1 ? '<div class="media-thumbs" id="media-thumbs">' + thumbs + '</div>' : '') +
+  '</div>';
+}
+
 function viewWork(work){
   var cat = findCategory(work.category);
-  var image = work.image ? '<img class="work-image" src="' + work.image + '" alt="' + escapeHtml(work.title) + '">' : '';
-  var desc = work.description ? '<p>' + escapeHtml(work.description) + '</p>' : '';
+  var media = workMedia(work);
+  var desc = workDescription(work) ? '<p>' + escapeHtml(workDescription(work)) + '</p>' : '';
+  var projectLink = (work.projectUrl)
+    ? '<a class="project-link" href="' + escapeHtml(work.projectUrl) + '" target="_blank" rel="noopener">' + t('viewProject') + '</a>'
+    : '';
+  var metaRows = [];
+  if (work.tools) metaRows.push(['metaTools', work.tools]);
+  if (work.role) metaRows.push(['metaRole', work.role]);
+  if (work.duration) metaRows.push(['metaDuration', work.duration]);
+  if (work.year) metaRows.push(['metaYear', work.year]);
+  var challenges = work.challenges
+    ? '<div><dt>' + t('metaChallenges') + '</dt><dd style="white-space:pre-line">' + escapeHtml(work.challenges) + '</dd></div>'
+    : '';
   var del = canEdit ? '<button id="delete-work-btn" class="danger" type="button">Excluir trabalho</button><p class="form-msg" hidden></p>' : '';
-  return '<a class="back-link" href="#/categoria/' + work.category + '">← ' + (cat ? escapeHtml(cat.title) : 'Voltar') + '</a>' +
-    '<article class="work-detail">' + image +
+  return '<a class="back-link" href="#/categoria/' + work.category + '">' + t('backPortfolio') + '</a>' +
+    '<article class="work-detail">' +
+      galleryHtml(media) +
       '<div class="work-info">' +
-        '<span class="work-badge cat-' + (cat ? cat.accent : 'pink') + '">' + (cat ? escapeHtml(cat.title) : '') + '</span>' +
-        '<h1>' + escapeHtml(work.title) + '</h1>' +
-        desc + del +
+        '<span class="work-badge cat-' + (cat ? cat.accent : 'pink') + '">' + (cat ? escapeHtml(catTitle(cat)) : '') + '</span>' +
+        '<h1>' + escapeHtml(workTitle(work)) + '</h1>' +
+        desc + projectLink +
+        (metaRows.length || challenges ? '<dl class="work-meta">' + metaRows.map(function(r){
+          return '<div><dt>' + t(r[0]) + '</dt><dd>' + escapeHtml(r[1]) + '</dd></div>';
+        }).join('') + challenges + '</dl>' : '') +
+        del +
       '</div>' +
     '</article>';
 }
 
 function view404(){
-  return '<a class="back-link" href="#/">← Portfólio</a><p class="empty-state">Página não encontrada.</p>';
+  return '<a class="back-link" href="#/">' + t('backPortfolio') + '</a><p class="empty-state">' + t('notFound') + '</p>';
 }
 
 /* ---------------- Skill ring animation ---------------- */
@@ -571,6 +609,19 @@ function animateSkillRings(){
   }
 }
 
+function attachGalleryHandlers(media){
+  var thumbs = document.querySelectorAll('.media-thumb');
+  if (!thumbs.length) return;
+  thumbs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var idx = parseInt(btn.getAttribute('data-index'), 10);
+      document.getElementById('media-stage').innerHTML = mediaStageHtml(media[idx]);
+      thumbs.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+    });
+  });
+}
+
 /* ---------------- Image resize ---------------- */
 
 function resizeImage(file, maxDim, quality){
@@ -602,8 +653,6 @@ function resizeImage(file, maxDim, quality){
 }
 
 /* ---------------- GitHub-backed storage ---------------- */
-/* Só quem tem o token (você) consegue gravar. Qualquer visitante
-   sem token só lê o data/works.json publicado no repositório. */
 
 function apiHeaders(){
   var h = { 'Accept': 'application/vnd.github+json' };
@@ -635,11 +684,7 @@ function saveWorks(newWorks){
     .then(function(res){ return res.ok ? res.json() : { sha: null }; })
     .then(function(current){
       var content = btoa(unescape(encodeURIComponent(JSON.stringify(newWorks, null, 2))));
-      var body = {
-        message: 'Atualiza portfólio (' + newWorks.length + ' trabalhos)',
-        content: content,
-        branch: GITHUB_BRANCH
-      };
+      var body = { message: 'Atualiza portfólio (' + newWorks.length + ' trabalhos)', content: content, branch: GITHUB_BRANCH };
       if (current.sha) body.sha = current.sha;
       return fetch(apiUrl, {
         method: 'PUT',
@@ -651,13 +696,12 @@ function saveWorks(newWorks){
     .catch(function(){ return false; });
 }
 
-/* ---------------- Admin widget ---------------- */
+/* ---------------- Admin + language widgets ---------------- */
 
 function renderAdminWidget(){
   var el = document.getElementById('admin-widget');
   if (canEdit){
-    el.innerHTML = '<div class="admin-status"><span>Modo edição ativo</span>' +
-      '<button id="admin-logout" type="button">Sair</button></div>';
+    el.innerHTML = '<div class="admin-status"><span>Modo edição ativo</span><button id="admin-logout" type="button">Sair</button></div>';
     document.getElementById('admin-logout').addEventListener('click', function(){
       sessionStorage.removeItem('gh_pat');
       ghToken = null; canEdit = false;
@@ -675,7 +719,7 @@ function openAdminPanel(){
   el.innerHTML = '<button class="admin-toggle" id="admin-open" type="button">Entrar como admin</button>' +
     '<div class="admin-panel">' +
       '<h3>Acesso do dono</h3>' +
-      '<p>Cole um token do GitHub (fine-grained, com acesso de escrita só a este repositório). Ele fica salvo apenas nesta aba, nunca é enviado a mais ninguém além do GitHub.</p>' +
+      '<p>Cole um token do GitHub (fine-grained, com acesso de escrita só a este repositório). Ele fica salvo apenas nesta aba.</p>' +
       '<input type="password" id="gh-token-input" placeholder="github_pat_...">' +
       '<button id="gh-token-submit" type="button">Entrar</button>' +
       '<p class="admin-msg" id="gh-token-msg" hidden></p>' +
@@ -699,29 +743,101 @@ function openAdminPanel(){
   });
 }
 
+function renderLangWidget(){
+  var el = document.getElementById('lang-widget');
+  el.innerHTML = '<button class="lang-toggle" id="lang-toggle" type="button">' + t('langToggle') + '</button>';
+  document.getElementById('lang-toggle').addEventListener('click', function(){
+    currentLang = currentLang === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('site_lang', currentLang);
+    document.documentElement.lang = currentLang === 'en' ? 'en' : 'pt-BR';
+    renderLangWidget();
+    route();
+  });
+}
+
+/* ---------------- Media form handlers ---------------- */
+
+function setupMediaField(field){
+  var select = field.querySelector('.media-type-select');
+  var fileInput = field.querySelector('.media-file-input');
+  var urlInput = field.querySelector('.media-url-input');
+  var removeBtn = field.querySelector('.remove-media-btn');
+  select.addEventListener('change', function(){
+    if (select.value === 'image'){
+      fileInput.style.display = ''; urlInput.style.display = 'none';
+    } else {
+      fileInput.style.display = 'none'; urlInput.style.display = '';
+    }
+  });
+  removeBtn.addEventListener('click', function(){
+    field.parentNode.removeChild(field);
+  });
+}
+
+function addMediaField(container){
+  var wrapper = document.createElement('div');
+  wrapper.innerHTML = mediaFieldHtml();
+  var field = wrapper.firstChild;
+  container.appendChild(field);
+  setupMediaField(field);
+}
+
 /* ---------------- Handlers ---------------- */
 
 function attachCategoryHandlers(cat){
   var form = document.getElementById('add-work-form');
   if (!form) return;
+  var mediaContainer = document.getElementById('media-fields');
+  addMediaField(mediaContainer);
+  document.getElementById('add-media-row').addEventListener('click', function(){
+    addMediaField(mediaContainer);
+  });
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var msg = form.querySelector('.form-msg');
     var btn = form.querySelector('button[type=submit]');
     var fd = new FormData(form);
     var title = (fd.get('title') || '').trim();
-    var description = (fd.get('description') || '').trim();
-    var file = fd.get('image');
-    if (!title || !file || !file.size) return;
+    if (!title){ return; }
+
+    var mediaFields = mediaContainer.querySelectorAll('.media-field');
+    var mediaPromises = [];
+    mediaFields.forEach(function(field){
+      var type = field.querySelector('.media-type-select').value;
+      if (type === 'image'){
+        var file = field.querySelector('.media-file-input').files[0];
+        if (file) mediaPromises.push(resizeImage(file).then(function(src){ return { type:'image', src:src }; }));
+      } else {
+        var url = field.querySelector('.media-url-input').value.trim();
+        if (url) mediaPromises.push(Promise.resolve({ type:'video', url:url }));
+      }
+    });
+
+    if (!mediaPromises.length){
+      msg.hidden = false;
+      msg.textContent = 'Adicione pelo menos uma imagem ou vídeo.';
+      return;
+    }
+
     btn.disabled = true; btn.textContent = 'Publicando...';
     msg.hidden = true;
-    resizeImage(file).then(function(dataUrl){
+
+    Promise.all(mediaPromises).then(function(media){
       var newWork = {
         id: cat.slug + '-' + Date.now().toString(36) + Math.random().toString(36).slice(2,7),
         category: cat.slug,
         title: title,
-        description: description,
-        image: dataUrl,
+        titleEn: (fd.get('titleEn') || '').trim(),
+        description: (fd.get('description') || '').trim(),
+        descriptionEn: (fd.get('descriptionEn') || '').trim(),
+        tools: (fd.get('tools') || '').trim(),
+        role: (fd.get('role') || '').trim(),
+        duration: (fd.get('duration') || '').trim(),
+        year: (fd.get('year') || '').trim(),
+        challenges: (fd.get('challenges') || '').trim(),
+        projectUrl: (fd.get('projectUrl') || '').trim(),
+        media: media,
         createdAt: new Date().toISOString()
       };
       var updated = WORKS.concat([newWork]);
@@ -740,6 +856,7 @@ function attachCategoryHandlers(cat){
 }
 
 function attachWorkHandlers(work){
+  attachGalleryHandlers(workMedia(work));
   var btn = document.getElementById('delete-work-btn');
   if (!btn) return;
   btn.addEventListener('click', function(){
@@ -786,6 +903,8 @@ function route(){
 /* ---------------- Init ---------------- */
 
 window.addEventListener('hashchange', route);
+document.documentElement.lang = currentLang === 'en' ? 'en' : 'pt-BR';
+renderLangWidget();
 
 var storedToken = sessionStorage.getItem('gh_pat');
 renderAdminWidget();
